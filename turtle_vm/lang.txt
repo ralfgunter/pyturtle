@@ -1,0 +1,37 @@
+add $d,$s,$t -- $d = $s + $t
+sub $d,$s,$t -- $d = $s - $t
+addi $d,$s,C -- $d = $s + C
+mult $s,$t -- $s = $s * $t
+div $s,$t  -- $s = $s / $t
+
+lw $t,C($s) -- $t = Memory[$s + C]
+sw $t,C($s) -- Memory[$s + C] = $t
+li $t,C -- $t = C
+
+and $d,$s,$t -- $d = $s & $t
+andi $d,$s,C -- $d = $s & C
+or $d,$s,$t -- $d = $s | $t
+ori $d,$s,C -- $d = $s | C
+xor $d,$s,$t -- $d = $s ^ $t
+not $d,$s -- $d = ~$s
+
+slt $d,$s,$t -- $d = ($s < $t)
+slti $d,$s,C -- $d = ($s < C)
+
+sll $d,$t,shamt -- $d = $t << shamt
+srl $d,$t,shamt -- $d = $t >> shamt
+
+beql $s,$t,label -- if ($s == $t) goto label
+bnel $s,$t,label -- if ($s != $t) goto label
+
+jl label -- jump to label
+jall label -- jump and link to label
+jr $s -- jump to address in $s
+jal $s -- jump and link to address in $s
+
+-- Logo-specific instructions
+fd $s -- move forward $s (can be negative)
+rt $s -- rotate CW $s degrees (can be negative)
+pu -- set pen up   ($pen = 1)
+pd -- set pen down ($pen = 0)
+cs -- clear screen

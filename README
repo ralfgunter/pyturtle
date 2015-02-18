@@ -1,0 +1,3 @@
+Very rough interpreter for a small subset of UCBLogo with ongoing work to also compile to MIPS-like assembly code, for which an interpreter is included.
+
+Some basic optimizations are supported (constant propagation and constant folding) with more coming along as time permits.
